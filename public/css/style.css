@@ -1,0 +1,54 @@
+/* html {
+    font-size: 62.5%;
+} */
+
+h1{
+    color: red;
+}
+.completed{
+    /* text-decoration: line-through; */
+    /* color: gray; */
+}
+.not{
+    /* text-decoration: underline; */
+}
+
+.strikethrough{
+    text-decoration: line-through;
+    color: gray;
+}
+.cover-container {
+    max-width: 40rem;
+}
+
+.register, 
+.login-button {
+    /* background-color: rgb(6,61,174) */
+    background-color: rgb(30, 107, 193)
+    
+}
+
+.register:hover,
+.login-button:hover{
+    background-color: rgba(30, 107, 193, 0.9);
+}
+
+.login {
+    max-width: 21rem;
+}
+
+.logo {
+    width: 5rem;
+}
+
+.reminder-container {
+    max-width: 30rem;
+}
+
+.userColor {
+    color: rgb(30, 107, 193)
+}
+
+.fa-square-check {
+    color: rgb(217, 175, 6);
+}

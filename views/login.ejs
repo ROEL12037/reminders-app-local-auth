@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include('./partials/head')%>
+    
+    <body class="text-center">
+
+        <div class="d-flex flex-column cover-container mx-auto text-center vh-100">
+            <header class="mb-auto">
+                <nav class="navbar navbar-expand-sm">
+                    <div class="container-sm">
+                        <a class="navbar-brand" href="/">
+                            <img src="/img/image260.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top rounded-2 border border-light">
+                            Forget-Me-Not
+                        </a>
+                        <div class="d-flex flex-row-reverse">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href="/signup">Sign-up</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="px-3">
+                <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>
+                <% } %>
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>
+                <% } %>
+
+                <div class="login d-flex flex-column mx-auto">
+
+                    <img src="/img/image261.png" class="mb-1 logo rounded-3 mx-auto">
+
+                    <h1 class="text-black h3 fw-normal">Log-in below</h1>
+
+                    <form action="/login" method="post">
+                        <div class="form-floating mb-1">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="email" name="email">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <div class="form-floating mb-1">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <div class="form-floating mb-1">
+                            <button type="submit" class="btn btn-lg fw-bold login-button text-light">Log-in</button>
+                        </div>
+                    </form>
+
+                    <p class="fw-lighter">Don't have an account? Sign-up <a href="/signup" class="text-decoration-none">here</a>.</p>
+                </div>
+            </main>
+
+            <%- include('./partials/footer')%>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
